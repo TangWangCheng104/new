@@ -1,0 +1,64 @@
+<%- include ./public/header.ejs%>
+
+<div class="container-fluid">
+    <div class="row">
+        <%- include ../public/list.ejs%>
+        <div class="col-sm-10">
+            <ol class="breadcrumb">
+                <li class="active">商品管理
+                </li>
+                <li class="active">商品列表
+                </li>
+            </ol>
+            <div class="panel panel-default">
+              
+			    <div class="panel-heading">
+                  增加商品
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive input-form">
+                        <form action="/admin/user/doedit" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<%= list._id%>" />
+                            <ul>
+                                <li>  用户名称: <input type="text" name="username" value="<%= list.username%>"/></li>
+                                <br>
+                                <li>  用户头像: <input type="file" name="pic" /></li>
+                                <img src="/<%= list.pic%>" width="80" height="80">
+                                <br>
+                                <li>  用户密码: <input type="text" name="password" value="<%= list.password%>"/></li>
+                                <br>
+                                <li>  用户电话: <input type="text" name="tel" value="<%= list.tel%>"/></li>
+                                <br>
+                                <li>  用户性别: <input type="text" name="sex" value="<%= list.sex%>"/></li>
+                                <br>
+                                <li>  添加时间: <input type="text" name="addtime" value="<%= list.addtime%>"/></li>
+                                <br>
+                                <li>  用户状态: <input type="text" name="status" value="<%= list.status%>"/></li>
+                                <li>
+                                    用户描述:
+                                    <textarea name="description" id="" cols="60" rows="8" >
+                                        <%= list.description%>
+                                    </textarea>
+                                </li>
+
+                                <li>
+                                    <br/>
+                                    <button type="submit" class="btn btn-default">提交</button>
+                                </li>
+
+                            </ul>
+
+
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
